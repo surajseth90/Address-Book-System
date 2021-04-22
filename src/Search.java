@@ -11,9 +11,9 @@ public class Search {
 		String na=contactDetails.get(i).getFirstName();
 		if(na.equals(name)){
 			contactDetails.remove(contactDetails.get(i));
-                 System.out.println("Enter your first Name to be changed: ");
+                 System.out.println("Enter your last Name to be changed: ");
 		         String lastName=sc.nextLine();
-		
+		         
 		         System.out.println("Enter new Address : ");
 		         String address=sc.nextLine();
 		
