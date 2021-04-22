@@ -4,43 +4,25 @@ public class AddressBookMain {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		ArrayList <AddressBook> contactDetails =new ArrayList <AddressBook>();
-		System.out.println("How many contacts you want add ? ");
-		int contactInput = sc.nextInt();
-		
-		for(int i =0;i<contactInput ; i++) {
-			
-			System.out.println("Enter your First Name : ");
-			String firstName = sc.nextLine();
-			sc.nextLine();
-			
-			System.out.println("Enter your Last Name : ");
-			String lastName=sc.nextLine();
-			
-			System.out.println("Enter your Address : ");
-			String address=sc.nextLine();
-			
-			System.out.println("Enter your City Name : ");
-			String city=sc.nextLine();
-			
-			System.out.println("Enter your State Name : ");
-			String state=sc.nextLine();
-			
-			System.out.println("Enter your Phone number : ");
-			String phoneNumber=sc.nextLine();
-			
-			System.out.println("Enter your Email : ");
-			String email=sc.nextLine();
-			
-			System.out.println("Enter your Zip code : ");
-			int zip=sc.nextInt();
-			
-			contactDetails.add(new AddressBook(firstName, lastName, address, city,
-					                             state, phoneNumber, email, zip));
-		
-		
-			
+		AddContact addContact =new AddContact();
+		System.out.println("What you want to perform : ");
+		System.out.println("1. Add Contact ");
+		System.out.println("2. Edit Contact");
+		int input = sc.nextInt();
+		switch (input)
+		{
+		case 1:
+		{	
+			addContact.add();
 		}
-		ShowContact.show(contactDetails);
+		case 2:
+		{	
+			String name = sc.nextLine();
+			ArrayList<AddressBook>contactDetails=addContact.getContact();
+			Search.searchContact(contactDetails, name);
+			ShowContact.show(contactDetails);
 		}
+		
+		}
+}
 }
