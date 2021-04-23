@@ -11,7 +11,7 @@ public class AddressBookMain {
 		
 		while(next.equalsIgnoreCase("y")) {
 		System.out.println("What you want to perform : ");
-		System.out.println("1. Add Contact ");
+		System.out.println("1. Add Address Book ");
 		System.out.println("2. Edit Contact");
 		System.out.println("3. Remove Contact");
 		int input = scanner.nextInt();
@@ -20,7 +20,7 @@ public class AddressBookMain {
 		{
 		case 1:
 		{	
-			addContact.add();
+			MultipleAddressBook.multipleAddressBook();
 			break;
 		}
 		case 2:

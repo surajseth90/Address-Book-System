@@ -8,6 +8,7 @@ public class AddressBook {
 	private int zip ;
 	private String phoneNumber;
 	private String email;	
+	 
 	
 	public AddressBook(String firstName ,String lastName ,String address, String city,
 			          String state,String phoneNumber,String email,int zip) {
