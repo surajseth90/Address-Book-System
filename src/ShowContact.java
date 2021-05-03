@@ -11,9 +11,9 @@ public class ShowContact {
 			System.out.println("Address is : " +contactDetails.get(i).getAddress());
 			System.out.println("City is : " +contactDetails.get(i).getCity());
 			System.out.println("State is : " +contactDetails.get(i).getState());
-			System.out.println("Zip is : " +contactDetails.get(i).getZip());
 			System.out.println("Phone number is : " +contactDetails.get(i).getPhoneNumber());
 			System.out.println("Email is : " +contactDetails.get(i).getEmail());
+			System.out.println("Zip is : " +contactDetails.get(i).getZip());
 		
 		}
 	}

@@ -9,6 +9,7 @@ public class MultipleAddressBook {
 		HashMap <String , AddContact > hmap = new HashMap <String ,AddContact>();
 		System.out.println("How many Address Book you want to add :");
 		int numberOfAddressBook = scanner.nextInt();
+		scanner.nextLine();
 		for (int i=0; i<numberOfAddressBook; i++)
 		{
 			System.out.println("Please Enter the name of Address Book : ");
