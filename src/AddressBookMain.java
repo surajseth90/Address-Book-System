@@ -19,6 +19,7 @@ public class AddressBookMain {
 			System.out.println("3. Remove Contact");
 			System.out.println("4. Search Contact");
 			System.out.println("5. View Person");
+			System.out.println("6. Count Persons");
 			int input = scanner.nextInt();
 			switch (input) {
 			case 1: {
@@ -84,6 +85,26 @@ public class AddressBookMain {
 				}
 				break;
 
+			}
+			case 6: {
+				System.out.println("Want to view a person by : \n City  : press 1 \n State : press 2 ");
+				ArrayList<AddressBook> contactDetails = addContact.getContact();
+				int search = scanner.nextInt();
+				scanner.nextLine();
+				if (search == 1) {
+					System.out.println("Enter the City name :");
+					String cityName = scanner.nextLine();
+					int countByCity = (int) contactDetails.stream()
+							.filter(person -> person.getCity().equalsIgnoreCase(cityName)).count();
+					System.out.println(countByCity);
+				} else {
+					System.out.println("Enter the State name :");
+					String stateName = scanner.nextLine();
+					int countByState = (int) contactDetails.stream()
+							.filter(person -> person.getState().equalsIgnoreCase(stateName)).count();
+					System.out.println(countByState);
+				}
+				break;
 			}
 			}
 
