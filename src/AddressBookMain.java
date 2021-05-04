@@ -1,8 +1,8 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
-
 
 public class AddressBookMain {
 
@@ -110,10 +110,32 @@ public class AddressBookMain {
 			}
 			case 7: {
 				ArrayList<AddressBook> contactDetails = addContact.getContact();
-				List<AddressBook> sortedAddressBook = contactDetails.stream()
-						.sorted((p1, p2) -> p1.getName().compareToIgnoreCase(p2.getName()))
-						.collect(Collectors.toList());
-				System.out.println(sortedAddressBook.toString());
+				System.out.println("Want to see sorted address book : ");
+				System.out.println(
+						"By Person's name - press 1 \nBy City  - press 2 \nBy State - press 3 \nBy Zip   - press 4");
+				int sortingByWhich = scanner.nextInt();
+				if (sortingByWhich == 1) {
+
+					List<AddressBook> sortedAddressBookByName = contactDetails.stream()
+							.sorted((p1, p2) -> p1.getName().compareToIgnoreCase(p2.getName()))
+							.collect(Collectors.toList());
+					System.out.println(sortedAddressBookByName.toString());
+				} else if (sortingByWhich == 2) {
+					List<AddressBook> sortedAddressBookByCity = contactDetails.stream()
+							.sorted((p1, p2) -> p1.getCity().compareToIgnoreCase(p2.getCity()))
+							.collect(Collectors.toList());
+					System.out.println(sortedAddressBookByCity.toString());
+				} else if (sortingByWhich == 3) {
+					List<AddressBook> sortedAddressBookByState = contactDetails.stream()
+							.sorted((p1, p2) -> p1.getState().compareToIgnoreCase(p2.getState()))
+							.collect(Collectors.toList());
+					System.out.println(sortedAddressBookByState.toString());
+				} else if (sortingByWhich == 4) {
+					List<AddressBook> sortedAddressBookByZip = contactDetails.stream()
+							.sorted((p1, p2) -> Integer.compare(p1.getZip(), p2.getZip())).collect(Collectors.toList());
+					System.out.println(sortedAddressBookByZip);
+				} else
+					System.out.println("Not a Valid Input !");
 				break;
 			}
 			}
