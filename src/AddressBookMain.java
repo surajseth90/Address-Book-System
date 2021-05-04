@@ -3,6 +3,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
+
 public class AddressBookMain {
 
 	public static void main(String[] args) {
@@ -20,6 +21,7 @@ public class AddressBookMain {
 			System.out.println("4. Search Contact");
 			System.out.println("5. View Person");
 			System.out.println("6. Count Persons");
+			System.out.println("7. View Sorted AddressBook");
 			int input = scanner.nextInt();
 			switch (input) {
 			case 1: {
@@ -104,6 +106,14 @@ public class AddressBookMain {
 							.filter(person -> person.getState().equalsIgnoreCase(stateName)).count();
 					System.out.println(countByState);
 				}
+				break;
+			}
+			case 7: {
+				ArrayList<AddressBook> contactDetails = addContact.getContact();
+				List<AddressBook> sortedAddressBook = contactDetails.stream()
+						.sorted((p1, p2) -> p1.getName().compareToIgnoreCase(p2.getName()))
+						.collect(Collectors.toList());
+				System.out.println(sortedAddressBook.toString());
 				break;
 			}
 			}
